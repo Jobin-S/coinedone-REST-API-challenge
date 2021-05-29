@@ -10,7 +10,9 @@ const verifyUsername =(req, res, next) => {
         next()
     }
 }
-
+router.get('/', (req, res)=>{
+    res.json({message:'API route'})
+})
 router.post('/signup',verifyUsername, signUp)
 router.post('/collection', verifyUsername, createSchedule)
 router.post('/restrict', verifyUsername, createRestrictions)
